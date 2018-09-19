@@ -3,7 +3,8 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api-items.js')
 const ui = require('./ui-items.js')
 
-const onItemForm = function (event) {
+// Create new Item
+const addNewItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   // Checking to see if the importance falls between 1-10
@@ -17,15 +18,22 @@ const onItemForm = function (event) {
     .catch(ui.newItemFail)
   }
 }
-
+// See all items
+const onShowItems = function () {
+  api.showItems()
+    .then(ui.showItemsSuccess)
+    .catch(ui.showItemsFail)
+}
 
 
 const itemsEventHandler = function () {
-  $('#item-form').on('submit', onItemForm)
+  $('#item-form').on('submit', addNewItem)
+
 }
 
 
 
 module.exports = {
-  itemsEventHandler
+  itemsEventHandler,
+  onShowItems
 }

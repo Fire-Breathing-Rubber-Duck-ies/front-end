@@ -13,8 +13,18 @@ const newItem = function (data) {
   })
 }
 
+const showItems = function () {
+  return $.ajax({
+    url: config.apiUrl + '/items',
+    method: 'GET',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
+  })
+}
 
 
 module.exports = {
-newItem
+newItem,
+showItems
 }

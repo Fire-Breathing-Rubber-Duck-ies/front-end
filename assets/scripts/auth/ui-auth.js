@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store.js')
+const itemsEvents = require('../items/events-items.js')
 
 const signUpFail = function () {
   alert('failed to sign up!')
@@ -8,6 +9,7 @@ const signUpFail = function () {
 const logInSuccess = function (data) {
   store.user = data.user
   alert('Logged in successfully!')
+  itemsEvents.onShowItems()
 }
 
 const logInFail = function () {
