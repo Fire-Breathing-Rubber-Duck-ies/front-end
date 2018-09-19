@@ -51,3 +51,7 @@ const authEventHandler = function () {
   $('#log-out').on('click', onLogOut)
   $('#change-password').on('submit', onChangePassword)
 }
+
+module.exports = {
+  authEventHandler
+}

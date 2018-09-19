@@ -1,0 +1,41 @@
+'use strict'
+const store = require('../store.js')
+
+const signUpFail = function () {
+  alert('failed to sign up!')
+}
+
+const loginSuccess = function (data) {
+  store.user = data.user
+  alert('Logged in successfully!')
+}
+
+const loginFail = function () {
+  alert('failed to login, please debug')
+}
+
+const logOutSuccess = function () {
+  alert('Logged out!')
+}
+
+const logOutFail = functino () {
+  alert('failed to logout')
+}
+
+const changePasswordSuccess = function () {
+ alert('changed password successfully')
+}
+
+const changePasswordFail = function () {
+ alert('Did not change password')
+}
+
+module.exports = {
+  signUpFail,
+  logInSuccess,
+  logInFail,
+  logOutSuccess,
+  logOutFail,
+  changePasswordSuccess,
+  changePasswordFail,
+}
