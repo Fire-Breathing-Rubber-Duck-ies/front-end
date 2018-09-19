@@ -14,7 +14,7 @@
     <body>
 
       <!-- Nav bar -->
-      <div class = "container-fluid">
+      <div class = "container-fluid" id="navbar">
       <nav class="navbar fixed-top navbar-light"style= "background-color: red">
         <a class="navbar-brand">Bucket List</a>
         <button id="dropDownButton" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,20 +42,20 @@
     </div>
     <!-- Nav bar end -->
 
-      <div class="container hide">
+      <div class="container">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <!-- Start of sign in card -->
-            <div class="card card-signin hide">
+            <div class="card card-signin " id="card-login">
               <div class="card-body">
                 <h5 class="card-title text-center">Sign In</h5>
                 <form class="form-signin">
                   <div class="form-label-group">
-                    <input type="email" id="inputEmail" name="credentials[emails]" class="form-control" placeholder="Email address" required autofocus>
+                    <input type="email"  name="credentials[emails]" class="form-control" placeholder="Email address" required autofocus>
                     <label for="inputEmail">Email address</label>
                   </div>
 
                   <div class="form-label-group">
-                    <input type="password" id="inputPassword" name="credentials[password]" class="form-control" placeholder="Password" required>
+                    <input type="password" name="credentials[password]" class="form-control" placeholder="Password" required>
                     <label for="inputPassword">Password</label>
                   </div>
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
@@ -66,7 +66,7 @@
             <!-- End of card -->
 
             <!-- Start of sign up card -->
-            <div class="card card-signin">
+            <div class="card card-signin" id="card-signup">
               <div class="card-body">
                 <h5 class="card-title text-center">Sign Up</h5>
                 <form class="form-signin" id="signup">
