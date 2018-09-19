@@ -25,7 +25,7 @@
           <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-              <a class="nav-link" id="to-add-item">Add Item</a>
+              <a class="nav-link" id="to-add-item" data-toggle="modal" data-target="#addItem">Add Item</a>
             </li>
 
             <li class="nav-item">
@@ -44,7 +44,9 @@
 
       <div class="container">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+
             <!-- Start of sign in card -->
+            
             <div class="card card-signin " id="card-login">
               <div class="card-body">
                 <h5 class="card-title text-center">Sign In</h5>
@@ -91,7 +93,27 @@
             </div>
             <!-- End of card -->
 
+            <div class="modal bd-example-modal-lg" id="addItem">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h2 class="modal-title">Add Item</h2>
+                            <button type="button" class="close" data-dismiss="modal">
+                              <span>&times;</span></button>
+                            </div>
 
+                            <div class="modal-body">
+                              <form id="Item-form">
+                                <input class="form-control" type="text" name="items[name]" placeholder="Name">
+                                <input class="form-control" type="text" name="items[description]" placeholder="Description">
+                                <input class="form-control" type="text" name="items[location]" placeholder="Location">
+                                <input class="form-control" type="number" name="items[priority]" placeholder="Input number (1-10)">
+                                <input type="submit" class="btn btn-primary" value="Add">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
 
           </div>
