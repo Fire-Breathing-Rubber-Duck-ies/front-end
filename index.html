@@ -42,6 +42,20 @@
     </div>
     <!-- Nav bar end -->
 
+    <!-- Start of sign in card -->
+ <div class= "container">
+   <div class= "col-sm-12 col-md-10 col-lg-12 mx-auto">
+    <div class="card card-signin">
+      <div class="card-body">
+        <h5 class="card-title text-center" id="table-container">Bucket List</h5>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- End of card -->
+
       <div class="container">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 
@@ -53,7 +67,8 @@
                 <form class="form-signin" id="login">
                   <div class="form-label-group">
 
-                    <input type="email" id="inputEmail" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
+                    <input type="email" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
+
 
                     <label for="inputEmail">Email address</label>
                   </div>
@@ -75,7 +90,7 @@
                 <h5 class="card-title text-center">Sign Up</h5>
                 <form class="form-signin" id="signup">
                   <div class="form-label-group">
-                    <input type="email" id="inputEmail" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
+                    <input type="email" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
                     <label for="inputEmail">Email address</label>
                   </div>
 
@@ -90,10 +105,13 @@
                   </div>
 
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
+                  <p class="to-signup">You mess up bro?</p>
                 </form>
               </div>
             </div>
             <!-- End of card -->
+
+            <!-- Add item modal start -->
 
             <div class="modal bd-example-modal-lg" id="addItem">
                       <div class="modal-dialog">
@@ -109,13 +127,15 @@
                                 <input class="form-control" type="text" name="items[name]" placeholder="Name">
                                 <input class="form-control" type="text" name="items[description]" placeholder="Description">
                                 <input class="form-control" type="text" name="items[location]" placeholder="Location">
-                                <input class="form-control" type="number" name="items[priority]" placeholder="Input number (1-10)">
+                                <input class="form-control" type="number" name="items[priority]" placeholder="Priority? (Input number from 1-10)">
                                 <input type="submit" class="btn btn-primary" value="Add">
                               </form>
                             </div>
                           </div>
                         </div>
                       </div>
+            <!-- Add item modal end-->
+
 
 
           </div>

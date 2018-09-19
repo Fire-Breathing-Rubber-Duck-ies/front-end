@@ -1,31 +1,47 @@
+{{#each list as |list|}}
 <div class = 'handlebars'>
-<section data-id="{{recipe.id}}" data-name="{{recipe.name}}" data-prep_time="{{recipe.prep_time}}" data-cook_time="{{recipe.cook_time}}" data-serving_size="{{recipe.serving_size}}" data-pot_mode="{{recipe.pot_mode}}" data-pot_pressure="{{recipe.pot_pressure}}" data-ingredient="{{recipe.ingredient}}" data-prep_instruction="{{recipe.prep_instruction}}" data-photo="{{recipe.photo}}">
-    <h1> {{recipe.name}} </h1>
-    <p> Id:{{recipe.id}} </p>
-    <p> Prep Time: {{recipe.prep_time}} </p>
-    <p> Cook Time: {{recipe.cook_time}} </p>
-    <p> Serving Size: {{recipe.serving_size}} </p>
-    <p> Pot Mode: {{recipe.pot_mode}} </p>
-    <p> Pot Pressure: {{recipe.pot_pressure}} </p>
-    <p> Ingredients: {{recipe.ingredient}} </p>
-    <p> Prep Instructions: {{recipe.prep_instruction}} </p>
-    <p> User: {{recipe.user.email}} </p>
-    <img class ="img-fluid" alt="Responsive image" src="{{recipe.photo}}">
+<section data-name="{{list.name}}" data-description="{{list.description}}" data-location="{{list.location}}" data-priority="{{list.priority}}">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Priority</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="form-check">
+          <input type="checkbox" class="form-check-input">
+        </div>
+      </td>
+        <td>1</td>
+        <td>Fight Chuck Norris</td>
+        <td>Norway</td>
+        <td><button type="button" class="btn btn-outline-warning"id="edit-button">Edit</button></td>
+        <td><button type="button" class="btn btn-outline-danger" id="delete-button">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
 
+  {{#if recipe.editable}}
 
 <div data-id = {{recipe.id}}>
   <div class="messages"></div>
-  {{#if recipe.editable}}
   <button type="button" class="btn btn-outline-secondary updateRecipeButton" data-toggle="modal" data-target="#recipeUpdateModal">Update Recipe</button>
   <button type="button" class="btn btn-outline-danger deleteRecipe">Delete Recipe</button>
-  <button type="button" class="btn btn-outline-secondary showRecipes">Back</button>
 </div>
+
 {{else}}
 
-<div>
-<button type="button" class="btn btn-outline-secondary showRecipes">Back</button>
-</div>
+<div></div>
 
 {{/if}}
 </section>
 </div>
+
+{{/each}}
