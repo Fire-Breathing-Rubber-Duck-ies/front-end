@@ -5,12 +5,12 @@ const signUpFail = function () {
   alert('failed to sign up!')
 }
 
-const loginSuccess = function (data) {
+const logInSuccess = function (data) {
   store.user = data.user
   alert('Logged in successfully!')
 }
 
-const loginFail = function () {
+const logInFail = function () {
   alert('failed to login, please debug')
 }
 
@@ -18,16 +18,16 @@ const logOutSuccess = function () {
   alert('Logged out!')
 }
 
-const logOutFail = functino () {
+const logOutFail = function () {
   alert('failed to logout')
 }
 
 const changePasswordSuccess = function () {
- alert('changed password successfully')
+  alert('changed password successfully')
 }
 
 const changePasswordFail = function () {
- alert('Did not change password')
+  alert('Did not change password')
 }
 
 module.exports = {
@@ -37,5 +37,5 @@ module.exports = {
   logOutSuccess,
   logOutFail,
   changePasswordSuccess,
-  changePasswordFail,
+  changePasswordFail
 }
