@@ -1,5 +1,6 @@
 'use strict'
 const auth = require('./auth/events-auth')
+const pageNavEvents = require('./pagenav/events-pagenav.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -8,4 +9,5 @@ const auth = require('./auth/events-auth')
 
 $(() => {
   auth.authEventHandler()
+  pageNavEvents.pageNavEventHandler()
 })
