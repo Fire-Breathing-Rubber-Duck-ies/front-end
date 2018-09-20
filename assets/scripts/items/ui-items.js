@@ -13,8 +13,8 @@ const newItemFail = function () {
 
 const showItemsSuccess = function (data) {
   console.log('data', data.items)
-  const selectItemHtml = listTemplate({ items: data.items })
-  $('#bucket-list-content').html(selectItemHtml)
+  const selectListHtml = listTemplate({ items: data.items })
+  $('#bucket-list-content').html(selectListHtml)
   $('#bucket-list-display').removeClass('hide')
 
   console.log('information returned', data)
@@ -33,12 +33,9 @@ const deleteItemFail = function () {
 }
 
 const selectItemSuccess = function (data) {
-  console.log('data', data.items)
+  console.log("hi", data)
   const selectItemHtml = listItemTemplate({ items: data.items })
   $('#bucket-list-content').html(selectItemHtml)
-  $('#bucket-list-display').removeClass('hide')
-
-  console.log('information returned', data)
 }
 
 
@@ -48,5 +45,6 @@ module.exports = {
   showItemsSuccess,
   showItemsFail,
   deleteItemSuccess,
-  deleteItemFail
+  deleteItemFail,
+  selectItemSuccess
 }

@@ -48,8 +48,8 @@ const onEditItem = function (event) {
   const data = getFormFields(event.target)
   api.updateItem(data)
     .then(api.selectItem)
-    .catch(ui.showItemsFail)
     .then(ui.selectItemSuccess)
+    .catch(ui.showItemsFail)
 }
 
 const onDeleteItem = function () {
