@@ -15,7 +15,7 @@
 
       <!-- Nav bar -->
       <div class = "container-fluid" id="navbar">
-      <nav class="navbar fixed-top navbar-light"style= "background-color: red">
+      <nav class="navbar fixed-top navbar-light" style= "background-color: red">
         <a class="navbar-brand">Bucket List</a>
         <button id="dropDownButton" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" id="to-change-password">Change Password</a>
+              <a class="nav-link" id="to-change-password" data-toggle="modal" data-target="#updatePassword">Change Password</a>
             </li>
 
             <li class="nav-item">
@@ -42,7 +42,7 @@
     </div>
     <!-- Nav bar end -->
 
-    <!-- Start of sign in card -->
+    <!-- Start of bucket list -->
  <div class= "container">
    <div class= "col-sm-12 col-md-10 col-lg-12 mx-auto">
     <div class="card card-signin">
@@ -54,7 +54,7 @@
     </div>
   </div>
 </div>
-    <!-- End of card -->
+    <!-- End of bucket list -->
 
       <div class="container">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -85,7 +85,7 @@
             <!-- End of card -->
 
             <!-- Start of sign up card -->
-            <div class="card card-signin" id="card-signup">
+            <div class="card card-signin hide" id="card-signup">
               <div class="card-body">
                 <h5 class="card-title text-center">Sign Up</h5>
                 <form class="form-signin" id="signup">
@@ -113,7 +113,7 @@
 
             <!-- Add item modal start -->
 
-            <div class="modal bd-example-modal-lg" id="addItem">
+            <div class="modal bd-modal-lg" id="addItem">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -135,6 +135,29 @@
                         </div>
                       </div>
             <!-- Add item modal end-->
+
+            <!-- start of change password modal -->
+            <div class="modal bd-modal-lg" id="updatePassword">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h2 class="modal-title">Change Password</h2>
+                            <button type="button" class="close" data-dismiss="modal">
+                              <span>&times;</span></button>
+                            </div>
+
+                            <div class="modal-body">
+                              <form id="change-pw-form">
+                                <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
+                                <input class="form-control" type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+                                <input type="submit" class="btn btn-primary" value="Update Password">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    <!-- end of change password modal -->
 
 
 
