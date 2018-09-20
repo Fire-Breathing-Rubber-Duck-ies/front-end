@@ -14,7 +14,7 @@
       </tr>
     </thead>
     {{#each items as |item|}}
-    <tbody data-name="{{item.name}}" data-description="{{item.description}}" data-location="{{item.location}}" data-priority="{{item.priority}}" data-status="{{item.status}}">
+    <tbody data-id="{{item._id}}" data-name="{{item.name}}" data-description="{{item.description}}" data-location="{{item.location}}" data-priority="{{item.priority}}" data-status="{{item.status}}">
       <tr>
         <td>{{item.status}}</td>
         <td>{{item.priority}}</td>
