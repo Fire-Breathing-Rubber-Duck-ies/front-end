@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Fire</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,156 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+
+      <!-- Nav bar -->
+      <div class = "container-fluid" >
+      <nav class="navbar fixed-top navbar-light hide" id="navbar" style="background: #facf58">
+        <a class="navbar-brand">Bucket List</a>
+        <button id="dropDownButton" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" id="to-add-item" data-toggle="modal" data-target="#addItem">Add Item</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="to-change-password" data-toggle="modal" data-target="#updatePassword">Change Password</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="to-signout">Sign Out</a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Nav bar end -->
+
+    <!-- Start of bucket list -->
+ <div class= "container handlebars-container">
+   <div class= "col-sm-12 col-md-10 col-lg-12 mx-auto">
+    <div class="card card-signin hide" id='bucket-list-display'>
+      <div class="card-body">
+        <h5 class="card-title text-center" id="table-container">Bucket List</h5>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- End of bucket list -->
+
+      <div class="container">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+
+            <!-- Start of sign in card -->
+
+            <div class="card card-signin " id="card-login">
+              <div class="card-body">
+                <h5 class="card-title text-center">Sign In</h5>
+                <form class="form-signin" id="login">
+                  <div class="form-label-group">
+
+                    <input type="email" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
+
+
+                    <label for="inputEmail">Email address</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <input type="password" name="credentials[password]" class="form-control" placeholder="Password" required>
+                    <label for="inputPassword">Password</label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                  <p class="to-signup">New User</p>
+                </form>
+              </div>
+            </div>
+            <!-- End of card -->
+
+            <!-- Start of sign up card -->
+            <div class="card card-signin hide" id="card-signup">
+              <div class="card-body">
+                <h5 class="card-title text-center">Sign Up</h5>
+                <form class="form-signin" id="signup">
+                  <div class="form-label-group">
+                    <input type="email" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
+                    <label for="inputEmail">Email address</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" name="credentials[password]" class="form-control" placeholder="Password" required>
+                    <label for="inputPassword">Password</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <input type="password" id="inputPasswordConfirmation" name="credentials[password_confirmation]" class="form-control" placeholder="Password Confirmation" required>
+                    <label for="inputPassword">Password Confirmation</label>
+                  </div>
+
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
+                  <p class="to-login">You mess up bro?</p>
+                </form>
+              </div>
+            </div>
+            <!-- End of card -->
+
+            <!-- Add item modal start -->
+
+            <div class="modal bd-modal-lg" id="addItem">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h2 class="modal-title">Add Item</h2>
+                            <button type="button" class="close" data-dismiss="modal">
+                              <span>&times;</span></button>
+                            </div>
+
+                            <div class="modal-body">
+                              <form id="item-form">
+                                <input class="form-control" type="text" name="items[name]" placeholder="Name">
+                                <input class="form-control" type="text" name="items[description]" placeholder="Description">
+                                <input class="form-control" type="text" name="items[location]" placeholder="Location">
+                                <input class="form-control" type="number" name="items[priority]" placeholder="Priority? (Input number from 1-10)">
+                                <input type="submit" class="btn btn-primary" value="Add">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            <!-- Add item modal end-->
+
+            <!-- start of change password modal -->
+            <div class="modal bd-modal-lg" id="updatePassword">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h2 class="modal-title">Change Password</h2>
+                            <button type="button" class="close" data-dismiss="modal">
+                              <span>&times;</span></button>
+                            </div>
+
+                            <div class="modal-body">
+                              <form id="change-pw-form">
+                                <input class="form-control" type="password" name="passwords[old]" placeholder="Password">
+                                <input class="form-control" type="password" name="passwords[new]" placeholder="Password Confirmation">
+                                <input type="submit" class="btn btn-primary" value="Update Password">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    <!-- end of change password modal -->
+
+
+
+          </div>
+        </div>
     </body>
 </html>
