@@ -1,5 +1,7 @@
 'use strict'
 
+const ListTemplate = require('../../templates/list.handlebars')
+
 const newItemSuccess = function () {
   alert('Barely works')
 }
@@ -9,6 +11,8 @@ const newItemFail = function () {
 }
 
 const showItemsSuccess = function (data) {
+  const selectListHtml = ListTemplate({ list: data.list })
+  $('.handlebars-container').html(selectListHtml)
   alert('Got all the items')
   console.log('information returned', data)
 }
