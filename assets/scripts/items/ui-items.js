@@ -17,9 +17,19 @@ const showItemsFail = function () {
   alert('did not get information')
 }
 
+const deleteItemSuccess = function () {
+  alert('Deleted item')
+}
+
+const deleteItemFail = function () {
+  alert('failed to delete item')
+}
+
 module.exports = {
   newItemSuccess,
   newItemFail,
   showItemsSuccess,
-  showItemsFail
+  showItemsFail,
+  deleteItemSuccess,
+  deleteItemFail
 }

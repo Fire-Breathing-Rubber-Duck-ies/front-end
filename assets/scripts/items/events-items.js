@@ -25,10 +25,16 @@ const onShowItems = function () {
     .catch(ui.showItemsFail)
 }
 
+const onDeleteItem = function () {
+  api.deleteItem()
+    .then(ui.deleteItemSuccess)
+    .catch(ui.deleteItemFail)
+}
+
 
 const itemsEventHandler = function () {
   $('#item-form').on('submit', addNewItem)
-
+  $('#deleteItem').on('click', onDeleteItem)
 }
 
 
