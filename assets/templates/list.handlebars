@@ -1,12 +1,13 @@
 {{#each list as |list|}}
 <div class = 'handlebars'>
-<section data-name="{{list.name}}" data-description="{{list.description}}" data-location="{{list.location}}" data-priority="{{list.priority}}">
+<section data-name="{{items.name}}" data-description="{{items.description}}" data-location="{{items.location}}" data-priority="{{items.priority}}">
   <table class="table">
     <thead>
       <tr>
         <th>Status</th>
         <th>Priority</th>
         <th>Name</th>
+        <th>Description</th>
         <th>Location</th>
         <th></th>
         <th></th>
@@ -19,18 +20,20 @@
           <input type="checkbox" class="form-check-input">
         </div>
       </td>
-        <td>1</td>
-        <td>Fight Chuck Norris</td>
-        <td>Norway</td>
+      <td>{{items.status}}</td>
+      <td>{{items.priority}}</td>
+        <td>{{items.name}}</td>
+        <td>{{items.description}}</td>
+        <td>{{items.location}}</td>
         <td><button type="button" class="btn btn-outline-warning"id="edit-button">Edit</button></td>
         <td><button type="button" class="btn btn-outline-danger" id="delete-button">Delete</button></td>
       </tr>
     </tbody>
   </table>
 
-  {{#if recipe.editable}}
+  <!-- {{#if list.editable}}
 
-<div data-id = {{recipe.id}}>
+<div data-id = {{list.id}}>
   <div class="messages"></div>
   <button type="button" class="btn btn-outline-secondary updateRecipeButton" data-toggle="modal" data-target="#recipeUpdateModal">Update Recipe</button>
   <button type="button" class="btn btn-outline-danger deleteRecipe">Delete Recipe</button>
@@ -42,6 +45,6 @@
 
 {{/if}}
 </section>
-</div>
+</div> -->
 
 {{/each}}
