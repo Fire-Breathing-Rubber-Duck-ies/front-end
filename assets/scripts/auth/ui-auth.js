@@ -26,7 +26,9 @@ const logOutFail = function () {
 }
 
 const changePasswordSuccess = function () {
-  alert('changed password successfully')
+  $('#updatePassword').modal(hide)
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
 }
 
 const changePasswordFail = function () {
