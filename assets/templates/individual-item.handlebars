@@ -1,0 +1,28 @@
+<div class = 'handlebars'>
+<section data-name="{{items.name}}" data-description="{{items.description}}" data-location="{{items.location}}" data-priority="{{items.priority}}">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Priority</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{item.status}}</td>
+        <td>{{item.priority}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.location}}</td>
+        <td><button type="button" class="btn btn-outline-warning"id="edit-button">Edit</button></td>
+        <td><button type="button" class="btn btn-outline-danger" id="delete-button">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+</div>
