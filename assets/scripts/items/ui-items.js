@@ -13,7 +13,8 @@ const newItemFail = function () {
 const showItemsSuccess = function (data) {
   const selectItemHtml = ItemTemplate({ item: data.item })
   $('.handlebars-container').html(selectItemHtml)
-  alert('Got all the items')
+  $('#bucket-list-display').removeClass('hide')
+
   console.log('information returned', data)
 }
 

@@ -45,7 +45,7 @@
     <!-- Start of bucket list -->
  <div class= "container handlebars-container">
    <div class= "col-sm-12 col-md-10 col-lg-12 mx-auto">
-    <div class="card card-signin">
+    <div class="card card-signin hide" id='bucket-list-display'>
       <div class="card-body">
         <h5 class="card-title text-center" id="table-container">Bucket List</h5>
 
@@ -148,8 +148,8 @@
 
                             <div class="modal-body">
                               <form id="change-pw-form">
-                                <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
-                                <input class="form-control" type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+                                <input class="form-control" type="password" name="passwords[old]" placeholder="Password">
+                                <input class="form-control" type="password" name="passwords[new]" placeholder="Password Confirmation">
                                 <input type="submit" class="btn btn-primary" value="Update Password">
                               </form>
                             </div>
