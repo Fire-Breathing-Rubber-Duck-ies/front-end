@@ -1,6 +1,7 @@
 'use strict'
 const store = require('../store.js')
 const itemsEvents = require('../items/events-items.js')
+const pageNav = require('../pagenav/ui-pagenav.js')
 
 const signUpFail = function () {
   alert('failed to sign up!')
@@ -8,7 +9,7 @@ const signUpFail = function () {
 
 const logInSuccess = function (data) {
   store.user = data.user
-  alert('Logged in successfully!')
+  pageNav.showOnlyNavBar()
   itemsEvents.onShowItems()
 }
 

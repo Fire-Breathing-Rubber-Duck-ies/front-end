@@ -9,7 +9,7 @@ const newItemFail = function () {
 }
 
 const showItemsSuccess = function (data) {
-  alert('Got all the items')
+$('#bucket-list-display').removeClass('hide')
   console.log('information returned', data)
 }
 
