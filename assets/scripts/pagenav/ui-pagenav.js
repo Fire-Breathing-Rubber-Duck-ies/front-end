@@ -11,8 +11,6 @@ const showOnlyNavBar = function () {
   $('#navbar').removeClass('hide')
 }
 
-
-
 module.exports = {
   showBlankPage,
   showOnlyNavBar
