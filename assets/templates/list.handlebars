@@ -1,6 +1,6 @@
 
 <div class = 'handlebars'>
-<section data-name="{{items.name}}" data-description="{{items.description}}" data-location="{{items.location}}" data-priority="{{items.priority}}">
+<section>
   <table class="table">
     <thead>
       <tr>
@@ -14,14 +14,14 @@
       </tr>
     </thead>
     {{#each items as |item|}}
-    <tbody>
+    <tbody data-name="{{item.name}}" data-description="{{item.description}}" data-location="{{item.location}}" data-priority="{{item.priority}}" data-status="{{item.status}}">
       <tr>
         <td>{{item.status}}</td>
         <td>{{item.priority}}</td>
         <td>{{item.name}}</td>
         <!-- <td>{{item.description}}</td>
         <td>{{item.location}}</td> -->
-        <td><button type="button" class="btn btn-outline-warning"id="edit-button">Edit</button></td>
+        <td><button type="button" class="edit-button btn btn-outline-warning"id="edit-button" data-toggle="modal" data-target="#editItem">Edit</button></td>
         <td><button type="button" class="btn btn-outline-danger" id="delete-button">Delete</button></td>
       </tr>
     </tbody>
