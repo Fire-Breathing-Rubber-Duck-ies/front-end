@@ -11,11 +11,16 @@ const onToLogin = function () {
   $('#card-login').removeClass('hide')
 }
 
+const onToSignout = function () {
+  pageNavUI.showBlankPage()
+  $('#card-login').removeClass('hide')
+}
 const pageNavEventHandler = function () {
-$('.to-signup').on('click', onToSignup),
-$('.to-login').on('click', onToLogin)
+  $('#to-signup').on('click', onToSignup)
+  $('#to-login').on('click', onToLogin)
+  $('#to-signout').on('click', onToSignout)
 }
 
 module.exports = {
-pageNavEventHandler
+  pageNavEventHandler
 }
