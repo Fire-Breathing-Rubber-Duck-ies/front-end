@@ -25,19 +25,24 @@ const onShowItems = function () {
     .catch(ui.showItemsFail)
 }
 
+const onEditItem = function (event) {
+  // event.preventDefault()
+  // const data = getFormFields(event.target)
+  // api.showItems(data)
+  //   .then(ui.showItemsSuccess)
+  //   .catch(ui.showItemsFail)
+}
+
 const onDeleteItem = function () {
   api.deleteItem()
     .then(ui.deleteItemSuccess)
     .catch(ui.deleteItemFail)
 }
 
-
 const itemsEventHandler = function () {
   $('#item-form').on('submit', addNewItem)
   $('#deleteItem').on('click', onDeleteItem)
 }
-
-
 
 module.exports = {
   itemsEventHandler,
