@@ -13,7 +13,6 @@ const addNewItem = function (event) {
   // If it does not, tell user to change value, otherwise
   // Make api call
   if (data.items.priority < 1 || data.items.priority > 10) {
-    alert('you messed up')
   } else {
     api.newItem(data)
       .then((res) => { store.id = res.items._id })
@@ -50,7 +49,6 @@ const onEditItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   if (data.items.priority < 1 || data.items.priority > 10) {
-    alert('you messed up')
   } else {
     api.updateItem(data)
       .then(ui.closeAllModals)

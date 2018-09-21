@@ -5,7 +5,7 @@ const itemsUi = require('../items/ui-items.js')
 const pageNav = require('../pagenav/ui-pagenav.js')
 
 const signUpFail = function () {
-  alert('failed to sign up!')
+  clearInputFields()
 }
 
 const logInSuccess = function (data) {
@@ -13,27 +13,40 @@ const logInSuccess = function (data) {
   pageNav.showOnlyNavBar()
   itemsEvents.onShowItems()
   $('.handlebars-container').removeClass('hide')
+  clearInputFields()
 }
 
 const logInFail = function () {
-  alert('failed to login, please debug')
+  clearInputFields()
 }
 
 const logOutSuccess = function () {
   itemsUi.closeAllModals()
   pageNav.logoutView()
+  clearInputFields()
 }
 
 const logOutFail = function () {
-  alert('failed to logout')
+  clearInputFields()
 }
 
 const changePasswordSuccess = function () {
   itemsUi.closeAllModals()
+  clearInputFields()
 }
 
 const changePasswordFail = function () {
+  clearInputFields()
+}
 
+const clearInputFields = function () {
+  $('#change-pw-form input[name="passwords[old]"]').val('')
+  $('#change-pw-form input[name="passwords[new]"]').val('')
+  $('#signup input[name="credentials[email]').val('')
+  $('#signup input[name="credentials[password]').val('')
+  $('#signup input[name="credentials[password_confirmation]').val('')
+  $('#login input[name="credentials[email]"]').val('')
+  $('#login input[name="credentials[password]"]').val('')
 }
 
 module.exports = {
