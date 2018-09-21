@@ -46,11 +46,15 @@ const onShowItems = function () {
 const onEditItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.updateItem(data)
-    .then(ui.closeAllModals)
-    .then(api.selectItem)
-    .then(ui.selectItemSuccess)
-    .catch(console.log('fail'))
+  if (data.items.priority < 1 || data.items.priority > 10) {
+    alert('you messed up')
+  } else {
+    api.updateItem(data)
+      .then(ui.closeAllModals)
+      .then(api.selectItem)
+      .then(ui.selectItemSuccess)
+      .catch(console.log('fail'))
+  }
 }
 
 const onDeleteItem = function () {
