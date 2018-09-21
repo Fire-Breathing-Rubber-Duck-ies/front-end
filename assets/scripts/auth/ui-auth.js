@@ -1,36 +1,52 @@
 'use strict'
 const store = require('../store.js')
 const itemsEvents = require('../items/events-items.js')
+const itemsUi = require('../items/ui-items.js')
 const pageNav = require('../pagenav/ui-pagenav.js')
 
 const signUpFail = function () {
-  alert('failed to sign up!')
+  clearInputFields()
 }
 
 const logInSuccess = function (data) {
   store.user = data.user
   pageNav.showOnlyNavBar()
   itemsEvents.onShowItems()
+  $('.handlebars-container').removeClass('hide')
+  clearInputFields()
 }
 
 const logInFail = function () {
-  alert('failed to login, please debug')
+  clearInputFields()
 }
 
 const logOutSuccess = function () {
-  alert('Logged out!')
+  itemsUi.closeAllModals()
+  pageNav.logoutView()
+  clearInputFields()
 }
 
 const logOutFail = function () {
-  alert('failed to logout')
+  clearInputFields()
 }
 
 const changePasswordSuccess = function () {
-  alert('changed password successfully')
+  itemsUi.closeAllModals()
+  clearInputFields()
 }
 
 const changePasswordFail = function () {
-  alert('Did not change password')
+  clearInputFields()
+}
+
+const clearInputFields = function () {
+  $('#change-pw-form input[name="passwords[old]"]').val('')
+  $('#change-pw-form input[name="passwords[new]"]').val('')
+  $('#signup input[name="credentials[email]').val('')
+  $('#signup input[name="credentials[password]').val('')
+  $('#signup input[name="credentials[password_confirmation]').val('')
+  $('#login input[name="credentials[email]"]').val('')
+  $('#login input[name="credentials[password]"]').val('')
 }
 
 module.exports = {

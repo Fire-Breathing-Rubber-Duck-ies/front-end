@@ -7,7 +7,6 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .card-signin {
@@ -46,4 +45,19 @@ padding: 2rem;
 
 .to-signup {
   text-align: center;
+}
+
+.card-body {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.handlebars-container {
+  margin-top: 40%;
+  border: 0;
+  border-radius: 1rem;
+}
+
+#bucket-list-display {
+  overflow: hidden;
 }

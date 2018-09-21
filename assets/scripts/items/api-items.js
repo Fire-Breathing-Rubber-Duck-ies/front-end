@@ -23,9 +23,9 @@ const showItems = function () {
   })
 }
 
-const deleteItem = function (id) {
+const deleteItem = function () {
   return $.ajax({
-    url: config.apiUrl + `/workouts/${id}`,
+    url: config.apiUrl + '/items/' + store.id,
     method: 'DELETE',
     headers: {
       'Authorization': 'Token token=' + store.user.token
@@ -33,10 +33,31 @@ const deleteItem = function (id) {
   })
 }
 
+const updateItem = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/items/' + store.id,
+    method: 'PATCH',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 
+const selectItem = function () {
+  return $.ajax({
+    url: config.apiUrl + '/items/' + store.id,
+    method: 'GET',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
 newItem,
 showItems,
-deleteItem
+deleteItem,
+updateItem,
+selectItem
 }

@@ -11,7 +11,7 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
+    <body class='top'>
 
       <!-- Nav bar -->
       <div class = "container-fluid" >
@@ -43,9 +43,9 @@
     <!-- Nav bar end -->
 
     <!-- Start of bucket list -->
- <div class= "container handlebars-container">
+ <div class= "container handlebars-container hide">
    <div class= "col-sm-12 col-md-10 col-lg-12 mx-auto">
-    <div class="card card-signin hide" id='bucket-list-display'>
+    <div class="card card-signin" id='bucket-list-display'>
       <div class="card-body">
         <h5 class="card-title text-center" id="table-container">Bucket List</h5>
         <div id="bucket-list-content">
@@ -79,7 +79,7 @@
                     <label for="inputPassword">Password</label>
                   </div>
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-                  <p class="to-signup">New User</p>
+                  <p id="to-signup">New User</p>
                 </form>
               </div>
             </div>
@@ -106,7 +106,7 @@
                   </div>
 
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
-                  <p class="to-login">You mess up bro?</p>
+                  <p id="to-login">You mess up bro?</p>
                 </form>
               </div>
             </div>
@@ -159,6 +159,31 @@
                       </div>
 
                     <!-- end of change password modal -->
+
+                    <!-- Edit item modal start -->
+
+                    <div class="modal bd-modal-lg" id="editItem">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h2 class="modal-title">Add Item</h2>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                      <span>&times;</span></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                      <form id="edit-item-form">
+                                        <input class="form-control" type="text" name="items[name]" placeholder="Name">
+                                        <input class="form-control" type="text" name="items[description]" placeholder="Description">
+                                        <input class="form-control" type="text" name="items[location]" placeholder="Location">
+                                        <input class="form-control" type="number" name="items[priority]" placeholder="Priority? (Input number from 1-10)">
+                                        <input type="submit" class="btn btn-primary" value="Edit">
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                    <!-- Edit modal end-->
 
 
 

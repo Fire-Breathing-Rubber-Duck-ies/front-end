@@ -1,5 +1,5 @@
 <div class = 'handlebars'>
-<section data-name="{{items.name}}" data-description="{{items.description}}" data-location="{{items.location}}" data-priority="{{items.priority}}">
+<section>
   <table class="table">
     <thead>
       <tr>
@@ -12,17 +12,18 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody data-id="{{items._id}}" data-name="{{items.name}}" data-description="{{items.description}}" data-location="{{items.location}}" data-priority="{{items.priority}}" data-status="{{items.status}}">
       <tr>
-        <td>{{item.status}}</td>
-        <td>{{item.priority}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.description}}</td>
-        <td>{{item.location}}</td>
-        <td><button type="button" class="btn btn-outline-warning"id="edit-button">Edit</button></td>
-        <td><button type="button" class="btn btn-outline-danger" id="delete-button">Delete</button></td>
+        <td>{{items.status}}</td>
+        <td>{{items.priority}}</td>
+        <td>{{items.name}}</td>
+        <td>{{items.description}}</td>
+        <td>{{items.location}}</td>
+        <td><button type="button" class="edit-button btn btn-outline-warning"id="edit-button" data-toggle="modal" data-target="#editItem">Edit</button></td>
+        <td><button type="button" class="btn btn-outline-danger delete-button" id="delete-button">Delete</button></td>
       </tr>
     </tbody>
+    <button type="button" class="back-button btn btn-outline-warning"id="edit-button">Back</button>
   </table>
 </section>
 </div>
