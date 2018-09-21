@@ -25,7 +25,7 @@ const showItemsFail = function () {
 }
 
 const deleteItemSuccess = function () {
-  alert('Deleted item')
+
 }
 
 const deleteItemFail = function () {
@@ -33,7 +33,6 @@ const deleteItemFail = function () {
 }
 
 const selectItemSuccess = function (data) {
-  console.log("hi", data)
   const selectItemHtml = listItemTemplate({ items: data.items })
   $('#bucket-list-content').html(selectItemHtml)
 }
