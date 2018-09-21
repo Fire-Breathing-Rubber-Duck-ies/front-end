@@ -6,6 +6,7 @@ const pageNav = require('../pagenav/ui-pagenav.js')
 
 const signUpFail = function () {
   clearInputFields()
+  itemsUi.showErrorMessage()
 }
 
 const logInSuccess = function (data) {
@@ -18,6 +19,7 @@ const logInSuccess = function (data) {
 
 const logInFail = function () {
   clearInputFields()
+  itemsUi.showErrorMessage()
 }
 
 const logOutSuccess = function () {
@@ -37,6 +39,7 @@ const changePasswordSuccess = function () {
 
 const changePasswordFail = function () {
   clearInputFields()
+  itemsUi.showErrorMessage()
 }
 
 const clearInputFields = function () {

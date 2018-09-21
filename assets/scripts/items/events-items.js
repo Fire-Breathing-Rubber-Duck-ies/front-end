@@ -13,13 +13,16 @@ const addNewItem = function (event) {
   // If it does not, tell user to change value, otherwise
   // Make api call
   if (data.items.priority < 1 || data.items.priority > 10) {
+    ui.showErrorMessage()
+    ui.newItemFail()
   } else {
     api.newItem(data)
+      .catch(ui.newItemFail)
       .then((res) => { store.id = res.items._id })
       .then(ui.closeAllModals)
+      .then(ui.clearNewItemInputFields)
       .then(api.selectItem)
       .then(ui.selectItemSuccess)
-      .catch(console.log('you done ducked up'))
   }
 }
 
@@ -35,6 +38,7 @@ const onEditItem = function (event) {
   const data = getFormFields(event.target)
   if (data.items.priority < 1 || data.items.priority > 10) {
     ui.resetInputFields()
+    ui.editItemFail()
   } else {
     api.updateItem(data)
       .then(ui.closeAllModals)

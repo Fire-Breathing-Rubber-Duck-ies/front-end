@@ -8,7 +8,8 @@ const newItemSuccess = function () {
 }
 
 const newItemFail = function () {
-
+  showErrorMessage()
+  clearNewItemInputFields()
 }
 
 const showItemsSuccess = function (data) {
@@ -23,8 +24,9 @@ const showItemsFail = function () {
 }
 
 const editItemFail = function () {
-  console.log('fail')
   resetInputFields()
+  $('.message').removeClass('hide')
+  showErrorMessage()
 }
 
 const deleteItemSuccess = function () {
@@ -74,6 +76,22 @@ const resetInputFields = function () {
   $('#editItem input[name="items[priority]"]').val(store.priority)
 }
 
+const showErrorMessage = function () {
+  $('.message').removeClass('hide')
+  setTimeout(function () {
+    $('.message').addClass('hide')
+  }, 1000
+  )
+}
+
+const clearNewItemInputFields = function () {
+  console.log('ji')
+  $('#item-form input[name="items[name]"]').val('')
+  $('#item-form input[name="items[description]"]').val('')
+  $('#item-form input[name="items[location]"]').val('')
+  $('#item-form input[name="items[priority]"]').val('')
+}
+
 module.exports = {
   newItemSuccess,
   newItemFail,
@@ -85,5 +103,7 @@ module.exports = {
   closeAllModals,
   fillEditInputs,
   editItemFail,
-  resetInputFields
+  resetInputFields,
+  showErrorMessage,
+  clearNewItemInputFields
 }
