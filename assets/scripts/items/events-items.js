@@ -32,7 +32,7 @@ const addNewItem = function (event) {
 const onShowItems = function () {
   api.showItems()
     .then(ui.showItemsSuccess)
-    .catch(console.log('fail'))
+    .catch()
 }
 
 const onEditItem = function (event) {
@@ -66,7 +66,7 @@ const onSelectItem = function () {
   store.id = itemId
   api.selectItem()
     .then(ui.selectItemSuccess)
-    .catch(console.log('fail'))
+    .catch(console.log('fail3'))
 }
 
 const onChangeCompleteStatus = function (event) {

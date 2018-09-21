@@ -4,9 +4,11 @@ body, html {
   background-image:url(http://78.media.tumblr.com/9951ca2e7e884a48ca5b5269f5514cd6/tumblr_nwjrkxWOcd1tslewgo1_500.gif);
   height: 100%;
   margin: 0;
-  background-position: center;
+  background-position: center fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  max-height: 100%;
+  overflow-y: hidden;
 }
 
 .card-signin {
@@ -64,4 +66,12 @@ padding: 2rem;
 
 .message {
   color: red;
+}
+
+.inner-handlebars-container {
+  margin-top: -35%;
+}
+
+.to-login {
+text-align: center;
 }
