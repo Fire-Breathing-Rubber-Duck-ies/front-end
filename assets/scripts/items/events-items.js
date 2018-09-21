@@ -9,6 +9,8 @@ const ui = require('./ui-items.js')
 const addNewItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  // send status of false as default
+  data.items.status = false
   // Checking to see if the importance falls between 1-10
   // If it does not, tell user to change value, otherwise
   // Make api call
@@ -60,10 +62,30 @@ const onDeleteItem = function () {
 
 const onSelectItem = function () {
   const itemId = $(event.target).closest('tbody').data('id')
+// Store Id, so it can be used in later functions when running a patch
   store.id = itemId
   api.selectItem()
     .then(ui.selectItemSuccess)
     .catch(console.log('fail'))
+}
+
+const onChangeCompleteStatus = function (event) {
+  store.id = $(event.target).closest('tbody').data('id')
+  api.selectItem()
+    .then(function (info) {
+      // Reverse what the status is
+      let updatedStatus
+      info.items.status ? updatedStatus = false : updatedStatus = true
+      const data = {
+        items: {
+          status: updatedStatus
+      }
+    }
+    console.log(data)
+    return data
+    })
+    .then(api.updateItem)
+    .then(onShowItems)
 }
 
 const itemsEventHandler = function () {
@@ -73,6 +95,8 @@ const itemsEventHandler = function () {
   $('#bucket-list-content').on('click', 'button.back-button', onShowItems)
   $('#bucket-list-content').on('click', 'td.item-name', onSelectItem)
   $('#edit-item-form').on('submit', onEditItem)
+    // WHen you click on the item status, it changes the status
+  $('#bucket-list-content').on('click', 'td.itemStatus', onChangeCompleteStatus)
 }
 
 module.exports = {
