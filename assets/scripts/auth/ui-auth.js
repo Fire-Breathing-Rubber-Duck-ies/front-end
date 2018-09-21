@@ -33,7 +33,7 @@ const changePasswordSuccess = function () {
 }
 
 const changePasswordFail = function () {
-  alert('Did not change password')
+
 }
 
 module.exports = {

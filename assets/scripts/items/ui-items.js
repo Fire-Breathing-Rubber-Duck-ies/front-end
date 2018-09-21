@@ -11,7 +11,6 @@ const newItemFail = function () {
 }
 
 const showItemsSuccess = function (data) {
-  console.log('data', data.items)
   const selectListHtml = listTemplate({ items: data.items })
   $('#bucket-list-content').html(selectListHtml)
   $('#bucket-list-display').removeClass('hide')
