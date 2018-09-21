@@ -16,8 +16,11 @@ const addNewItem = function (event) {
     alert('you messed up')
   } else {
     api.newItem(data)
+      .then((res) => { store.id = res.items._id })
       .then(ui.closeAllModals)
-      .then(onShowItems)
+      .then(api.selectItem)
+      .then(ui.selectItemSuccess)
+      .catch(console.log('you done ducked up'))
   }
 }
 
