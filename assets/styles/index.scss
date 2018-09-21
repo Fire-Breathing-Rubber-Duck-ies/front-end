@@ -43,7 +43,7 @@ padding: 2rem;
   display: none;
 }
 
-.to-signup {
+#to-signup {
   text-align: center;
 }
 
@@ -60,4 +60,8 @@ padding: 2rem;
 
 #bucket-list-display {
   overflow: hidden;
+}
+
+.message {
+  color: red;
 }
