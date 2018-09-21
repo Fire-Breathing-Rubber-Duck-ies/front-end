@@ -30,7 +30,6 @@ const addNewItem = function (event) {
 const onShowItems = function () {
   api.showItems()
     .then(ui.showItemsSuccess)
-    .catch(console.log('fail'))
 }
 
 const onEditItem = function (event) {
