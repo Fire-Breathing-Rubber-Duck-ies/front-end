@@ -49,7 +49,7 @@ const authEventHandler = function () {
   $('#signup').on('submit', onSignUp)
   $('#login').on('submit', onLogin)
   $('#log-out').on('click', onLogOut)
-  $('#change-pw-form').on('submit', onChangePassword)
+  $('#to-signout').on('click', onLogOut)
 }
 
 module.exports = {
