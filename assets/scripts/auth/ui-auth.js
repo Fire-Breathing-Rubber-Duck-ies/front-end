@@ -1,6 +1,7 @@
 'use strict'
 const store = require('../store.js')
 const itemsEvents = require('../items/events-items.js')
+const itemsUi = require('../items/ui-items.js')
 const pageNav = require('../pagenav/ui-pagenav.js')
 
 const signUpFail = function () {
@@ -11,6 +12,7 @@ const logInSuccess = function (data) {
   store.user = data.user
   pageNav.showOnlyNavBar()
   itemsEvents.onShowItems()
+  $('.handlebars-container').removeClass('hide')
 }
 
 const logInFail = function () {
@@ -18,7 +20,8 @@ const logInFail = function () {
 }
 
 const logOutSuccess = function () {
-  alert('Logged out!')
+  itemsUi.closeAllModals()
+  pageNav.logoutView()
 }
 
 const logOutFail = function () {
@@ -26,9 +29,7 @@ const logOutFail = function () {
 }
 
 const changePasswordSuccess = function () {
-  $('#updatePassword').modal(hide)
-  $('body').removeClass('modal-open')
-  $('.modal-backdrop').remove()
+  itemsUi.closeAllModals()
 }
 
 const changePasswordFail = function () {

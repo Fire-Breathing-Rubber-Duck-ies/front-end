@@ -16,6 +16,7 @@ const addNewItem = function (event) {
     alert('you messed up')
   } else {
     api.newItem(data)
+      .then(ui.closeAllModals)
       .then(onShowItems)
   }
 }
@@ -46,6 +47,7 @@ const onEditItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.updateItem(data)
+    .then(ui.closeAllModals)
     .then(api.selectItem)
     .then(ui.selectItemSuccess)
     .catch(console.log('fail'))

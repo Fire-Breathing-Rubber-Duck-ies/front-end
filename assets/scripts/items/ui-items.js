@@ -4,11 +4,10 @@ const listTemplate = require('../../templates/list.handlebars')
 const listItemTemplate = require('../../templates/individual-item.handlebars')
 
 const newItemSuccess = function () {
-  alert('Barely works')
 }
 
 const newItemFail = function () {
-  alert('failed like a woman who gave king henry a female child')
+
 }
 
 const showItemsSuccess = function (data) {
@@ -21,7 +20,6 @@ const showItemsSuccess = function (data) {
 }
 
 const showItemsFail = function () {
-  alert('did not get information')
 }
 
 const deleteItemSuccess = function () {
@@ -29,7 +27,7 @@ const deleteItemSuccess = function () {
 }
 
 const deleteItemFail = function () {
-  alert('failed to delete item')
+
 }
 
 const selectItemSuccess = function (data) {
@@ -37,6 +35,13 @@ const selectItemSuccess = function (data) {
   $('#bucket-list-content').html(selectItemHtml)
 }
 
+const closeAllModals = function () {
+  $('#updatePassword').modal('hide')
+  $('#addItem').modal('hide')
+  $('#editItem').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
+}
 
 module.exports = {
   newItemSuccess,
@@ -45,5 +50,6 @@ module.exports = {
   showItemsFail,
   deleteItemSuccess,
   deleteItemFail,
-  selectItemSuccess
+  selectItemSuccess,
+  closeAllModals
 }
