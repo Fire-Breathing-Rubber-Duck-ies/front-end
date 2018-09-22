@@ -21,7 +21,7 @@ body, html {
 .card-signin .card-title {
   //margin-bottom: 2rem;
   font-weight: 300;
-  font-size: 1.5rem;
+  //font-size: 1.5rem;
 }
 
 .card-signin .card-body {
@@ -72,6 +72,18 @@ padding: 2rem;
   margin-top: -35%;
 }
 
-.to-login {
+#to-login {
 text-align: center;
+}
+
+.to-signup {
+text-align: center;
+}
+
+.card-title {
+  font-family: 'Paytone One', sans-serif;
+  color: rgb(255, 212, 92);
+  text-shadow: .8px .8px black;
+  font-size: 30px;
+
 }
