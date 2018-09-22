@@ -16,8 +16,6 @@ const showItemsSuccess = function (data) {
   const selectListHtml = listTemplate({ items: data.items })
   $('#bucket-list-content').html(selectListHtml)
   $('#bucket-list-display').removeClass('hide')
-
-  console.log('information returned', data)
 }
 
 const showItemsFail = function () {
@@ -85,7 +83,6 @@ const showErrorMessage = function () {
 }
 
 const clearNewItemInputFields = function () {
-  console.log('ji')
   $('#item-form input[name="items[name]"]').val('')
   $('#item-form input[name="items[description]"]').val('')
   $('#item-form input[name="items[location]"]').val('')
