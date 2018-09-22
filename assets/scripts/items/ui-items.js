@@ -38,6 +38,7 @@ const deleteItemFail = function () {
 const selectItemSuccess = function (data) {
   const selectItemHtml = listItemTemplate({ items: data.items })
   $('#bucket-list-content').html(selectItemHtml)
+  console.log('data', data)
 }
 
 const closeAllModals = function () {

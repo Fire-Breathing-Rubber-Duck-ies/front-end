@@ -87,6 +87,27 @@ const onChangeCompleteStatus = function (event) {
     .then(onShowItems)
 }
 
+
+const onIndividualChangeCompleteStatus = function (event) {
+  store.id = $(event.target).closest('tbody').data('id')
+  api.selectItem()
+    .then(function (info) {
+      // Reverse what the status is
+      let updatedStatus
+      info.items.status ? updatedStatus = false : updatedStatus = true
+      const data = {
+        items: {
+          status: updatedStatus
+        }
+      }
+      return data
+    })
+    .then(api.updateItem)
+    .then(api.selectItem)
+    .then(ui.selectItemSuccess)
+    .catch(ui.editItemFail)
+}
+
 const itemsEventHandler = function () {
   $('#item-form').on('submit', addNewItem)
   $('#bucket-list-content').on('click', 'button.delete-button', onDeleteItem)
@@ -96,6 +117,7 @@ const itemsEventHandler = function () {
   $('#edit-item-form').on('submit', onEditItem)
   // WHen you click on the item status, it changes the status
   $('#bucket-list-content').on('click', 'td.itemStatus', onChangeCompleteStatus)
+  $('#bucket-list-content').on('click', 'td.individualItemStatus', onIndividualChangeCompleteStatus)
 }
 
 module.exports = {
