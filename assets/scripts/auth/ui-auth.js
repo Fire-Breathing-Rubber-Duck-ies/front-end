@@ -15,6 +15,8 @@ const logInSuccess = function (data) {
   itemsEvents.onShowItems()
   $('.handlebars-container').removeClass('hide')
   clearInputFields()
+  $('.duck-right').addClass('hide')
+  $('.duck-left').addClass('hide')
 }
 
 const logInFail = function () {
@@ -26,6 +28,8 @@ const logOutSuccess = function () {
   itemsUi.closeAllModals()
   pageNav.logoutView()
   clearInputFields()
+  $('.duck-right').removeClass('hide')
+  $('.duck-left').removeClass('hide')
 }
 
 const logOutFail = function () {
@@ -59,5 +63,6 @@ module.exports = {
   logOutSuccess,
   logOutFail,
   changePasswordSuccess,
-  changePasswordFail
+  changePasswordFail,
+  clearInputFields
 }
