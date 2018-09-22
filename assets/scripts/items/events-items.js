@@ -62,7 +62,7 @@ const onDeleteItem = function () {
 
 const onSelectItem = function () {
   const itemId = $(event.target).closest('tbody').data('id')
-// Store Id, so it can be used in later functions when running a patch
+  // Store Id, so it can be used in later functions when running a patch
   store.id = itemId
   api.selectItem()
     .then(ui.selectItemSuccess)
@@ -79,10 +79,10 @@ const onChangeCompleteStatus = function (event) {
       const data = {
         items: {
           status: updatedStatus
+        }
       }
-    }
-    console.log(data)
-    return data
+      console.log(data)
+      return data
     })
     .then(api.updateItem)
     .then(onShowItems)
@@ -95,7 +95,7 @@ const itemsEventHandler = function () {
   $('#bucket-list-content').on('click', 'button.back-button', onShowItems)
   $('#bucket-list-content').on('click', 'td.item-name', onSelectItem)
   $('#edit-item-form').on('submit', onEditItem)
-    // WHen you click on the item status, it changes the status
+  // WHen you click on the item status, it changes the status
   $('#bucket-list-content').on('click', 'td.itemStatus', onChangeCompleteStatus)
 }
 
