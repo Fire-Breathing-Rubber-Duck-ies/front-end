@@ -57,7 +57,7 @@ const onDeleteItem = function () {
   api.deleteItem()
     .then(ui.deleteItemSuccess)
     .then(onShowItems)
-    .catch(console.log('fail'))
+    .catch()
 }
 
 const onSelectItem = function () {
@@ -66,7 +66,7 @@ const onSelectItem = function () {
   store.id = itemId
   api.selectItem()
     .then(ui.selectItemSuccess)
-    .catch(console.log('fail3'))
+    .catch()
 }
 
 const onChangeCompleteStatus = function (event) {
@@ -81,7 +81,6 @@ const onChangeCompleteStatus = function (event) {
           status: updatedStatus
         }
       }
-      console.log(data)
       return data
     })
     .then(api.updateItem)
