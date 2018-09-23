@@ -39,4 +39,4 @@ As a user, I want to see on a map where all my activities are
 
 ### Wireframe:
 
-![Wireframe image](./public/wireframe.jpg)
+![Wireframe image](./public/wireframe.jpeg)
