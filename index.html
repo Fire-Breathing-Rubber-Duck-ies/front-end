@@ -10,8 +10,11 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
     </head>
-    <body class='top'>
+    <body>
+      <img src="https://openclipart.org/image/2400px/svg_to_png/104593/1294915403.png" class="col-4 float-left mt-5 pt-5 duck-left" alt="">
+      <img src="https://openclipart.org/image/2400px/svg_to_png/104593/1294915403.png" class="col-4 float-right mt-5 pt-5 duck-right" alt="">
 
       <!-- Nav bar -->
       <div class = "container-fluid" >
@@ -33,7 +36,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" id="to-signout">Sign Out</a>
+              <a class="nav-link" id="to-signout" data-toggle="collapse" data-target="#navbarSupportedContent">Sign Out</a>
             </li>
 
           </ul>
@@ -44,7 +47,7 @@
 
     <!-- Start of bucket list -->
  <div class= "container handlebars-container hide">
-   <div class= "col-sm-12 col-md-10 col-lg-12 mx-auto">
+   <div class= "inner-handlebars-container col-sm-12 col-md-10 col-lg-12 mx-auto">
     <div class="card card-signin" id='bucket-list-display'>
       <div class="card-body">
         <h5 class="card-title text-center" id="table-container">Bucket List</h5>
@@ -80,9 +83,11 @@
                   </div>
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
                   <p id="to-signup">New User</p>
+                  <p class="message hide">Incorrect input</p>
                 </form>
               </div>
             </div>
+
             <!-- End of card -->
 
             <!-- Start of sign up card -->
@@ -107,6 +112,7 @@
 
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
                   <p id="to-login">You mess up bro?</p>
+                  <p class="message hide">Incorrect input</p>
                 </form>
               </div>
             </div>
@@ -130,6 +136,7 @@
                                 <input class="form-control" type="text" name="items[location]" placeholder="Location">
                                 <input class="form-control" type="number" name="items[priority]" placeholder="Priority? (Input number from 1-10)">
                                 <input type="submit" class="btn btn-primary" value="Add">
+                                <p class="message hide">Incorrect input</p>
                               </form>
                             </div>
                           </div>
@@ -152,6 +159,7 @@
                                 <input class="form-control" type="password" name="passwords[old]" placeholder="Password">
                                 <input class="form-control" type="password" name="passwords[new]" placeholder="Password Confirmation">
                                 <input type="submit" class="btn btn-primary" value="Update Password">
+                                <p class="message hide">Incorrect input</p>
                               </form>
                             </div>
                           </div>
@@ -166,7 +174,7 @@
                               <div class="modal-dialog">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h2 class="modal-title">Add Item</h2>
+                                    <h2 class="modal-title">Edit Item</h2>
                                     <button type="button" class="close" data-dismiss="modal">
                                       <span>&times;</span></button>
                                     </div>
@@ -178,13 +186,14 @@
                                         <input class="form-control" type="text" name="items[location]" placeholder="Location">
                                         <input class="form-control" type="number" name="items[priority]" placeholder="Priority? (Input number from 1-10)">
                                         <input type="submit" class="btn btn-primary" value="Edit">
+                                        <p class="message hide">Incorrect input</p>
                                       </form>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                     <!-- Edit modal end-->
-
+                    <!-- Ducks!!!!!!-->
 
 
           </div>

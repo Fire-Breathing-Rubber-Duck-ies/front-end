@@ -6,6 +6,7 @@ const pageNav = require('../pagenav/ui-pagenav.js')
 
 const signUpFail = function () {
   clearInputFields()
+  itemsUi.showErrorMessage()
 }
 
 const logInSuccess = function (data) {
@@ -14,16 +15,21 @@ const logInSuccess = function (data) {
   itemsEvents.onShowItems()
   $('.handlebars-container').removeClass('hide')
   clearInputFields()
+  $('.duck-right').addClass('hide')
+  $('.duck-left').addClass('hide')
 }
 
 const logInFail = function () {
   clearInputFields()
+  itemsUi.showErrorMessage()
 }
 
 const logOutSuccess = function () {
   itemsUi.closeAllModals()
   pageNav.logoutView()
   clearInputFields()
+  $('.duck-right').removeClass('hide')
+  $('.duck-left').removeClass('hide')
 }
 
 const logOutFail = function () {
@@ -37,6 +43,7 @@ const changePasswordSuccess = function () {
 
 const changePasswordFail = function () {
   clearInputFields()
+  itemsUi.showErrorMessage()
 }
 
 const clearInputFields = function () {
@@ -56,5 +63,6 @@ module.exports = {
   logOutSuccess,
   logOutFail,
   changePasswordSuccess,
-  changePasswordFail
+  changePasswordFail,
+  clearInputFields
 }

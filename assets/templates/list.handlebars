@@ -16,7 +16,13 @@
     {{#each items as |item|}}
     <tbody data-id="{{item._id}}" data-name="{{item.name}}" data-description="{{item.description}}" data-location="{{item.location}}" data-priority="{{item.priority}}" data-status="{{item.status}}">
       <tr>
-        <td>{{item.status}}</td>
+        <td
+            {{#if item.status}}
+              <td class="itemStatus"> <p>✔️</p></td>
+              {{else}}
+              <td class="itemStatus"> <p>☐</p></td>
+            {{/if}}
+        </td>
         <td>{{item.priority}}</td>
         <td class="item-name">{{item.name}}</td>
         <!-- <td>{{item.description}}</td>

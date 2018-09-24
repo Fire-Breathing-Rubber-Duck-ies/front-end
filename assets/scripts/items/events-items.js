@@ -9,52 +9,44 @@ const ui = require('./ui-items.js')
 const addNewItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  // send status of false as default
+  data.items.status = false
   // Checking to see if the importance falls between 1-10
   // If it does not, tell user to change value, otherwise
   // Make api call
   if (data.items.priority < 1 || data.items.priority > 10) {
+    ui.showErrorMessage()
+    ui.newItemFail()
   } else {
     api.newItem(data)
+      .catch(ui.newItemFail)
       .then((res) => { store.id = res.items._id })
       .then(ui.closeAllModals)
+      .then(ui.clearNewItemInputFields)
       .then(api.selectItem)
       .then(ui.selectItemSuccess)
-      .catch(console.log('you done ducked up'))
   }
-}
-
-const fillEditInputs = function (event) {
-  let itemId = $(event.target).closest('tbody').data('id')
-  store.id = itemId
-  let itemName = $(event.target).closest('tbody').data('name')
-  let itemDescription = $(event.target).closest('tbody').data('description')
-  let itemLocation = $(event.target).closest('tbody').data('location')
-  let itemPriority = $(event.target).closest('tbody').data('priority')
-  let itemStatus = $(event.target).closest('tbody').data('status')
-  console.log(itemName, itemDescription)
-  $('#editItem input[name="items[name]"]').val(itemName)
-  $('#editItem input[name="items[description]"]').val(itemDescription)
-  $('#editItem input[name="items[location]"]').val(itemLocation)
-  $('#editItem input[name="items[priority]"]').val(itemPriority)
 }
 
 // See all items
 const onShowItems = function () {
   api.showItems()
     .then(ui.showItemsSuccess)
-    .catch(console.log('fail'))
+    .catch()
 }
 
 const onEditItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   if (data.items.priority < 1 || data.items.priority > 10) {
+    ui.resetInputFields()
+    ui.editItemFail()
   } else {
     api.updateItem(data)
       .then(ui.closeAllModals)
       .then(api.selectItem)
       .then(ui.selectItemSuccess)
-      .catch(console.log('fail'))
+      .catch(ui.editItemFail)
   }
 }
 
@@ -65,24 +57,67 @@ const onDeleteItem = function () {
   api.deleteItem()
     .then(ui.deleteItemSuccess)
     .then(onShowItems)
-    .catch(console.log('fail'))
+    .catch()
 }
 
 const onSelectItem = function () {
   const itemId = $(event.target).closest('tbody').data('id')
+  // Store Id, so it can be used in later functions when running a patch
   store.id = itemId
   api.selectItem()
     .then(ui.selectItemSuccess)
-    .catch(console.log('fail'))
+    .catch()
+}
+
+const onChangeCompleteStatus = function (event) {
+  store.id = $(event.target).closest('tbody').data('id')
+  api.selectItem()
+    .then(function (info) {
+      // Reverse what the status is
+      let updatedStatus
+      info.items.status ? updatedStatus = false : updatedStatus = true
+      const data = {
+        items: {
+          status: updatedStatus
+        }
+      }
+      return data
+    })
+    .then(api.updateItem)
+    .then(onShowItems)
+}
+
+
+const onIndividualChangeCompleteStatus = function (event) {
+  store.id = $(event.target).closest('tbody').data('id')
+  api.selectItem()
+    .then(function (info) {
+      // Reverse what the status is
+      let updatedStatus
+      info.items.status ? updatedStatus = false : updatedStatus = true
+      const data = {
+        items: {
+          status: updatedStatus
+        }
+      }
+      return data
+    })
+    .then(api.updateItem)
+    .then(api.selectItem)
+    .then(ui.selectItemSuccess)
+    .catch(ui.editItemFail)
 }
 
 const itemsEventHandler = function () {
   $('#item-form').on('submit', addNewItem)
   $('#bucket-list-content').on('click', 'button.delete-button', onDeleteItem)
-  $('#bucket-list-content').on('click', 'button.edit-button', fillEditInputs)
+  $('#bucket-list-content').on('click', 'button.edit-button', ui.fillEditInputs)
   $('#bucket-list-content').on('click', 'button.back-button', onShowItems)
   $('#bucket-list-content').on('click', 'td.item-name', onSelectItem)
   $('#edit-item-form').on('submit', onEditItem)
+  // WHen you click on the item status, it changes the status
+  $('#bucket-list-content').on('click', 'td.itemStatus', onChangeCompleteStatus)
+  $('#bucket-list-content').on('click', 'td.individualItemStatus', onIndividualChangeCompleteStatus)
 }
 
 module.exports = {
