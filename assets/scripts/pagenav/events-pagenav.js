@@ -4,7 +4,7 @@ const pageNavUI = require('./ui-pagenav.js')
 
 const onToSignup = function () {
   pageNavUI.showBlankPage()
-  $('#card-signup').removeClass('hide')
+  $('#card-signup, #app-title').removeClass('hide')
   authUI.clearInputFields()
 }
 
