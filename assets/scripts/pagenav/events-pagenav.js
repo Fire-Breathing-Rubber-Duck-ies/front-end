@@ -10,7 +10,7 @@ const onToSignup = function () {
 
 const onToLogin = function () {
   pageNavUI.showBlankPage()
-  $('#card-login').removeClass('hide')
+  $('#card-login, #app-title').removeClass('hide')
   authUI.clearInputFields()
 }
 
