@@ -91,3 +91,7 @@ text-align: center;
   -webkit-transform: scaleX(-1);
      transform: scaleX(-1);
 }
+
+.flames:hover {
+  cursor: url('assets/images/flame.png'), auto;
+}
