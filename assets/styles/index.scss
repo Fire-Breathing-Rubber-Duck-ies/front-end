@@ -91,3 +91,12 @@ text-align: center;
   -webkit-transform: scaleX(-1);
      transform: scaleX(-1);
 }
+
+.flames:hover {
+  cursor: url('assets/images/flame.png'), auto;
+}
+.app-title {
+  font-family: 'Paytone One', sans-serif;
+  color: rgb(255, 212, 92);
+  text-shadow: .8px .8px black;
+}

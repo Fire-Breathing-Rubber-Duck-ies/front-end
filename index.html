@@ -13,13 +13,16 @@
       <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
     </head>
     <body>
+      <h1 class="text-center mt-5 app-title" id="app-title">Waddle you do Before you Quack?</h1>
+ <div class="clearfix"></div>
+
       <img src="https://openclipart.org/image/2400px/svg_to_png/104593/1294915403.png" class="col-4 float-left mt-5 pt-5 duck-left" alt="">
       <img src="https://openclipart.org/image/2400px/svg_to_png/104593/1294915403.png" class="col-4 float-right mt-5 pt-5 duck-right" alt="">
 
       <!-- Nav bar -->
       <div class = "container-fluid" >
       <nav class="navbar fixed-top navbar-light hide" id="navbar" style="background: #facf58">
-        <a class="navbar-brand">Bucket List</a>
+        <a class="navbar-brand">Waddle You do Before You Quack?</a>
         <button id="dropDownButton" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +39,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" id="to-signout" data-toggle="collapse" data-target="#navbarSupportedContent">Sign Out</a>
+              <a class="nav-link" id="to-signout" data-toggle="collapse" data-target="#navbarSupportedContent">Duck Off</a>
             </li>
 
           </ul>
@@ -45,12 +48,13 @@
     </div>
     <!-- Nav bar end -->
 
+
     <!-- Start of bucket list -->
  <div class= "container handlebars-container hide">
    <div class= "inner-handlebars-container col-sm-12 col-md-10 col-lg-12 mx-auto">
     <div class="card card-signin" id='bucket-list-display'>
       <div class="card-body">
-        <h5 class="card-title text-center" id="table-container">Bucket List</h5>
+        <h5 class="card-title text-center" id="table-container">Waddle You Do Before You Quack?</h5>
         <div id="bucket-list-content">
         </div>
 
@@ -65,7 +69,7 @@
 
             <!-- Start of sign in card -->
 
-            <div class="card card-signin " id="card-login">
+            <div class="card card-signin flames" id="card-login">
               <div class="card-body">
                 <h5 class="card-title text-center">Sign In</h5>
                 <form class="form-signin" id="login">
@@ -81,9 +85,9 @@
                     <input type="password" name="credentials[password]" class="form-control" placeholder="Password" required>
                     <label for="inputPassword">Password</label>
                   </div>
-                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-                  <p id="to-signup">New User</p>
-                  <p class="message hide">Incorrect input</p>
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Spread Your Wings and Fly</button>
+                  <p id="to-signup">Sign up Mallard</p>
+                  <p class="message hide">Are you Quackers? Enter the right information!</p>
                 </form>
               </div>
             </div>
@@ -91,7 +95,7 @@
             <!-- End of card -->
 
             <!-- Start of sign up card -->
-            <div class="card card-signin hide" id="card-signup">
+            <div class="card card-signin flames hide" id="card-signup">
               <div class="card-body">
                 <h5 class="card-title text-center">Sign Up</h5>
                 <form class="form-signin" id="signup">
@@ -110,9 +114,9 @@
                     <label for="inputPassword">Password Confirmation</label>
                   </div>
 
-                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
-                  <p id="to-login">You mess up bro?</p>
-                  <p class="message hide">Incorrect input</p>
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Spread Your Wings and Fly</button>
+                  <p id="to-login">Flap back to the Login Page</p>
+                  <p class="message hide">Are you Quackers? Enter the right information!</p>
                 </form>
               </div>
             </div>
@@ -159,7 +163,7 @@
                                 <input class="form-control" type="password" name="passwords[old]" placeholder="Password">
                                 <input class="form-control" type="password" name="passwords[new]" placeholder="Password Confirmation">
                                 <input type="submit" class="btn btn-primary" value="Update Password">
-                                <p class="message hide">Incorrect input</p>
+                                <p class="message hide">Are you Quackers? Enter the right information!</p>
                               </form>
                             </div>
                           </div>
@@ -186,14 +190,13 @@
                                         <input class="form-control" type="text" name="items[location]" placeholder="Location">
                                         <input class="form-control" type="number" name="items[priority]" placeholder="Priority? (Input number from 1-10)">
                                         <input type="submit" class="btn btn-primary" value="Edit">
-                                        <p class="message hide">Incorrect input</p>
+                                        <p class="message hide">Are you Quackers? Enter the right information!</p>
                                       </form>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                     <!-- Edit modal end-->
-                    <!-- Ducks!!!!!!-->
 
 
           </div>
