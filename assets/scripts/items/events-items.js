@@ -25,6 +25,7 @@ const addNewItem = function (event) {
       .then(ui.clearNewItemInputFields)
       .then(api.selectItem)
       .then(ui.selectItemSuccess)
+      .then(checkPageWidth)
   }
 }
 
@@ -46,6 +47,7 @@ const onEditItem = function (event) {
       .then(ui.closeAllModals)
       .then(api.selectItem)
       .then(ui.selectItemSuccess)
+      .then(checkPageWidth)
       .catch(ui.editItemFail)
   }
 }
@@ -56,7 +58,8 @@ const onDeleteItem = function () {
   store.id = itemId
   api.deleteItem()
     .then(ui.deleteItemSuccess)
-    .then(onShowItems)
+    .then(api.showItems)
+    .then(ui.showItemsSuccessAfterDelete)
     .catch()
 }
 
@@ -66,6 +69,7 @@ const onSelectItem = function () {
   store.id = itemId
   api.selectItem()
     .then(ui.selectItemSuccess)
+    .then(checkPageWidth)
     .catch()
 }
 
@@ -87,7 +91,6 @@ const onChangeCompleteStatus = function (event) {
     .then(onShowItems)
 }
 
-
 const onIndividualChangeCompleteStatus = function (event) {
   store.id = $(event.target).closest('tbody').data('id')
   api.selectItem()
@@ -105,8 +108,25 @@ const onIndividualChangeCompleteStatus = function (event) {
     .then(api.updateItem)
     .then(api.selectItem)
     .then(ui.selectItemSuccess)
+    .then(checkPageWidth)
     .catch(ui.editItemFail)
 }
+
+const checkPageWidth = function (data) {
+  if ($(window).width() < 500) {
+    $('.handlebars').addClass('hide')
+    $('.rotateMessage').removeClass('hide')
+  } else {
+  }
+  return data
+}
+
+$(window).resize(function () {
+  if ($(window).width() > 499) {
+    $('.handlebars').removeClass('hide')
+    $('.rotateMessage').addClass('hide')
+  } else {}
+})
 
 const itemsEventHandler = function () {
   $('#item-form').on('submit', addNewItem)
