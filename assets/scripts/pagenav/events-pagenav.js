@@ -6,12 +6,14 @@ const onToSignup = function () {
   pageNavUI.showBlankPage()
   $('#card-signup, #app-title').removeClass('hide')
   authUI.clearInputFields()
+  $('#app-title').removeClass('hide')
 }
 
 const onToLogin = function () {
   pageNavUI.showBlankPage()
   $('#card-login').removeClass('hide')
   authUI.clearInputFields()
+  $('#app-title').removeClass('hide')
 }
 
 const onToSignout = function () {

@@ -13,6 +13,16 @@ const newItemFail = function () {
 }
 
 const showItemsSuccess = function (data) {
+  if (data.items[0]) {
+    const selectListHtml = listTemplate({ items: data.items })
+    $('#bucket-list-content').html(selectListHtml)
+    $('#bucket-list-display').removeClass('hide')
+  } else {
+    $('#addItem').modal('toggle')
+  }
+}
+
+const showItemsSuccessAfterDelete = function (data) {
   const selectListHtml = listTemplate({ items: data.items })
   $('#bucket-list-content').html(selectListHtml)
   $('#bucket-list-display').removeClass('hide')
@@ -78,7 +88,7 @@ const showErrorMessage = function () {
   $('.message').removeClass('hide')
   setTimeout(function () {
     $('.message').addClass('hide')
-  }, 1000
+  }, 2000
   )
 }
 
@@ -102,5 +112,6 @@ module.exports = {
   editItemFail,
   resetInputFields,
   showErrorMessage,
-  clearNewItemInputFields
+  clearNewItemInputFields,
+  showItemsSuccessAfterDelete
 }
