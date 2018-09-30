@@ -13,16 +13,11 @@
       <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
     </head>
     <body>
-      <h1 class="text-center mt-5 app-title" id="app-title">Waddle you do Before you Quack?</h1>
-
-      <img src="https://openclipart.org/image/2400px/svg_to_png/104593/1294915403.png" class="col-4 float-left mt-5 pt-5 duck-left hidden" alt="">
-      <img src="https://openclipart.org/image/2400px/svg_to_png/104593/1294915403.png" class="col-4 float-right mt-5 pt-5 duck-right hidden" alt="">
-
       <!-- Nav bar -->
       <div class = "container-fluid" >
-      <nav class="navbar fixed-top navbar-light hide" id="navbar" style="background: #facf58">
-        <a class="navbar-brand title-text">Waddle You do Before You Quack?</a>
-        <button id="dropDownButton" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar fixed-top navbar-light" id="navbar" style="background: #facf58">
+        <a class="navbar-brand title-text">Waddle You Do Before You Quack?</a>
+        <button id="dropDownButton" class="navbar-toggler ml-auto hide" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -54,7 +49,7 @@
 
     <!-- Start of bucket list -->
  <div class= "container handlebars-container hide">
-   <div class= "inner-handlebars-container col-sm-12 col-md-10 col-lg-12 mx-auto">
+   <div class= "inner-handlebars-container">
     <div class="card card-signin" id='bucket-list-display'>
       <div class="card-body">
         <h5 class="card-title text-center" id="table-container">Your Bucket List</h5>
@@ -68,12 +63,11 @@
 </div>
     <!-- End of bucket list -->
 
-      <div class="container">
-          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="auth-container">
 
             <!-- Start of sign in card -->
 
-            <div class="card card-signin flames" id="card-login">
+            <div class="card auth-responsive card-signin" id="card-login">
               <div class="card-body">
                 <h5 class="card-title text-center">Sign In</h5>
                 <form class="form-signin" id="login">
@@ -99,7 +93,7 @@
             <!-- End of card -->
 
             <!-- Start of sign up card -->
-            <div class="card card-signin flames hide" id="card-signup">
+            <div class="card auth-responsive card-signin flames hide" id="card-signup">
               <div class="card-body">
                 <h5 class="card-title text-center">Sign Up</h5>
                 <form class="form-signin" id="signup">
@@ -125,6 +119,7 @@
               </div>
             </div>
             <!-- End of card -->
+          </div>
 
             <!-- Add item modal start -->
 
@@ -203,7 +198,5 @@
                     <!-- Edit modal end-->
 
 
-          </div>
-        </div>
     </body>
 </html>
