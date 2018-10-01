@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Fire</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    </head>
+    <body>
+      <!-- Nav bar -->
+      <div class = "container-fluid" >
+      <nav class="navbar fixed-top navbar-light" id="navbar" style="background: #facf58">
+        <a class="navbar-brand title-text">Waddle You Do Before You Quack?</a>
+        <button id="dropDownButton" class="navbar-toggler ml-auto hide" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+              <div data-toggle="collapse" data-target="#navbarSupportedContent">
+                <a class="nav-link" id="to-add-item" data-toggle="modal" data-target="#addItem">Add Item</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <div data-toggle="collapse" data-target="#navbarSupportedContent">
+                <a class="nav-link" id="to-change-password" data-toggle="modal" data-target="#updatePassword">Change Password</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="to-signout" data-toggle="collapse" data-target="#navbarSupportedContent">Fly Away</a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Nav bar end -->
+
+
+    <!-- Start of bucket list -->
+ <div class= "container handlebars-container hide">
+   <div class= "inner-handlebars-container">
+    <div class="card card-signin" id='bucket-list-display'>
+      <div class="card-body">
+        <h5 class="card-title text-center" id="table-container">Your Bucket List</h5>
+        <h4 class="rotateMessage text-center hide">Please rotate your phone.</h4>
+        <div id="bucket-list-content">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- End of bucket list -->
+
+      <div class="auth-container">
+
+            <!-- Start of sign in card -->
+
+            <div class="card auth-responsive card-signin" id="card-login">
+              <div class="card-body">
+                <h5 class="card-title text-center">Sign In</h5>
+                <form class="form-signin" id="login">
+                  <div class="form-label-group">
+
+                    <input type="email" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
+
+
+                    <label for="inputEmail">Email address</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <input type="password" name="credentials[password]" class="form-control" placeholder="Password" required>
+                    <label for="inputPassword">Password</label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Spread Your Wings and Fly</button>
+                  <p id="to-signup">New User</p>
+                  <p class="message hide">Are you quackers? Please correct input!</p>
+                </form>
+              </div>
+            </div>
+
+            <!-- End of card -->
+
+            <!-- Start of sign up card -->
+            <div class="card auth-responsive card-signin flames hide" id="card-signup">
+              <div class="card-body">
+                <h5 class="card-title text-center">Sign Up</h5>
+                <form class="form-signin" id="signup">
+                  <div class="form-label-group">
+                    <input type="email" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
+                    <label for="inputEmail">Email address</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" name="credentials[password]" class="form-control" placeholder="Password" required>
+                    <label for="inputPassword">Password</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <input type="password" id="inputPasswordConfirmation" name="credentials[password_confirmation]" class="form-control" placeholder="Password Confirmation" required>
+                    <label for="inputPassword">Password Confirmation</label>
+                  </div>
+
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Spread Your Wings and Fly</button>
+                  <p id="to-login">Sign In</p>
+                  <p class="message hide">Are you quackers? Please correct input!</p>
+                </form>
+              </div>
+            </div>
+            <!-- End of card -->
+          </div>
+
+            <!-- Add item modal start -->
+
+            <div class="modal bd-modal-lg" id="addItem">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h2 class="modal-title">Add Bucket List Item</h2>
+                            <button type="button" class="close" data-dismiss="modal">
+                              <span>&times;</span></button>
+                            </div>
+
+                            <div class="modal-body">
+                              <form id="item-form">
+                                <input class="form-control" type="text" name="items[name]" placeholder="Name">
+                                <input class="form-control" type="text" name="items[description]" placeholder="Description">
+                                <input class="form-control" type="text" name="items[location]" placeholder="Location">
+                                <input class="form-control" type="number" name="items[priority]" placeholder="Priority? (Input number from 1-10)">
+                                <input type="submit" class="btn btn-primary" value="Add">
+                                <p class="message hide">Are you quackers? Please correct input!</p>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            <!-- Add item modal end-->
+
+            <!-- start of change password modal -->
+            <div class="modal bd-modal-lg" id="updatePassword">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h2 class="modal-title">Change Password</h2>
+                            <button type="button" class="close" data-dismiss="modal">
+                              <span>&times;</span></button>
+                            </div>
+
+                            <div class="modal-body">
+                              <form id="change-pw-form">
+                                <input class="form-control" type="password" name="passwords[old]" placeholder="Password">
+                                <input class="form-control" type="password" name="passwords[new]" placeholder="Password Confirmation">
+                                <input type="submit" class="btn btn-primary" value="Update Password">
+                                <p class="message hide">Are you quackers? Please correct input!</p>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    <!-- end of change password modal -->
+
+                    <!-- Edit item modal start -->
+
+                    <div class="modal bd-modal-lg" id="editItem">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h2 class="modal-title">Edit Item</h2>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                      <span>&times;</span></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                      <form id="edit-item-form">
+                                        <input class="form-control" type="text" name="items[name]" placeholder="Name">
+                                        <input class="form-control" type="text" name="items[description]" placeholder="Description">
+                                        <input class="form-control" type="text" name="items[location]" placeholder="Location">
+                                        <input class="form-control" type="number" name="items[priority]" placeholder="Priority? (Input number from 1-10)">
+                                        <input type="submit" class="btn btn-primary" value="Edit">
+                                        <p class="message hide">Are you quackers? Please correct input!</p>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                    <!-- Edit modal end-->
+
+
+    </body>
+</html>
