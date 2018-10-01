@@ -8,14 +8,15 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   max-height: 100%;
-  overflow-y: hidden;
+  overflow: auto;
+  background-attachment: fixed;
 }
 
 .card-signin {
-  margin-top: 40%;
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  overflow: auto;
 }
 
 .card-signin .card-title {
@@ -28,17 +29,12 @@ body, html {
 padding: 2rem;
 }
 
-.form-signin {
-  width: 100%;
-}
 
 .form-signin .btn {
   font-size: 80%;
   border-radius: 5rem;
   letter-spacing: .1rem;
   font-weight: bold;
-  //padding: 1rem;
-  transition: all 0.2s;
 }
 
 .hide {
@@ -49,27 +45,23 @@ padding: 2rem;
   text-align: center;
 }
 
-.card-body {
-  max-height: 500px;
-  overflow-y: scroll;
-}
-
 .handlebars-container {
-  margin-top: 40%;
   border: 0;
   border-radius: 1rem;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 370px;
+  overflow: auto;
 }
 
 #bucket-list-display {
-  overflow: hidden;
 }
 
 .message, .rotateMessage {
   color: red;
-}
-
-.inner-handlebars-container {
-  margin-top: -35%;
 }
 
 #to-login, #to-signup, .item-name {
@@ -84,19 +76,23 @@ padding: 2rem;
   font-size: 30px;
 }
 
-.duck-right {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-
-// .flames:hover {
-//   cursor: url('assets/images/flame.png'), auto;
-// }
-
 .app-title {
   font-family: 'Paytone One', sans-serif;
   color: rgb(255, 212, 92);
   text-shadow: .8px .8px black;
+}
+
+.auth-container {
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 370px;
+}
+
+.message {
+  text-align: center;
 }
 
 @media (max-width: 1420px) {
@@ -104,10 +100,24 @@ padding: 2rem;
 }
 
 @media (max-width: 500px) {
-  .container {margin-top: -15%;}
   .title-text {font-size: 15px;}
+  .auth-container {width: 90%;}
+}
+
+@media (max-width: 576px) {
+.edit-button {display: none;}
+.delete-button {display: none;}
 }
 
 @media (max-width: 1080px) {
-  #bucket-list-display {margin-top: 250px;}
+
+}
+
+@media (max-height: 440px) {
+  .card-signin {
+    margin-top: 120px;}
+  .handlebars-container {
+    margin-top: 60px;
+    width: 95%;
+  }
 }
